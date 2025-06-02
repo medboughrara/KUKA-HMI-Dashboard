@@ -2,101 +2,187 @@
 
 A modern web-based Human Machine Interface (HMI) dashboard built with Next.js, TypeScript, and Tailwind CSS for KUKA robotics systems.
 
-## Deployment
+## Live Demo
 
-The project is deployed on GitHub Pages and can be accessed at:
-https://medboughrara.github.io/KUKA-HMI-Dashboard/
+Visit the live demo at: https://medboughrara.github.io/KUKA-HMI-Dashboard/
 
-## Features
+## Detailed Installation Guide
 
-- 📸 **Camera Monitoring**: Real-time camera feed monitoring
-- 🔄 **Conveyor Control**: Manage and monitor conveyor systems
-- 📊 **Statistics**: Real-time performance metrics and analytics
-- 🔍 **Process Flow**: Visual representation of manufacturing processes
-- 🚀 **Modern UI**: Built with shadcn/ui components for a beautiful, responsive interface
-- 📱 **Mobile Responsive**: Optimized for both desktop and mobile devices
+### System Requirements
 
-## Tech Stack
+1. **Node.js Installation**
+   - Download and install Node.js v18 or higher from [Node.js official website](https://nodejs.org/)
+   - Verify installation:
+     ```powershell
+     node --version
+     ```
 
-- [Next.js 15](https://nextjs.org/) - React Framework
-- [TypeScript](https://www.typescriptlang.org/) - Type Safety
-- [Tailwind CSS](https://tailwindcss.com/) - Styling
-- [shadcn/ui](https://ui.shadcn.com/) - UI Components
-- [Recharts](https://recharts.org/) - Data Visualization
-- [React Hook Form](https://react-hook-form.com/) - Form Handling
+2. **PNPM Installation**
+   - Install pnpm globally using PowerShell:
+     ```powershell
+     iwr https://get.pnpm.io/install.ps1 -useb | iex
+     ```
+   - Verify installation:
+     ```powershell
+     pnpm --version
+     ```
 
-## Getting Started
+3. **Git Installation**
+   - Download and install Git from [Git official website](https://git-scm.com/)
+   - Verify installation:
+     ```powershell
+     git --version
+     ```
 
-### Prerequisites
+### Project Setup
 
-- Node.js (v18 or higher)
-- pnpm (v8 or higher)
+1. **Clone the Repository**
+   ```powershell
+   git clone https://github.com/medboughrara/KUKA-HMI-Dashboard.git
+   cd KUKA-HMI-Dashboard
+   ```
 
-### Installation
+2. **Install Dependencies**
+   ```powershell
+   pnpm install
+   ```
 
-1. Clone the repository:
-```bash
-git clone [repository-url]
-cd kuka-hmi
+3. **Development Server**
+   - Start the development server:
+     ```powershell
+     pnpm dev
+     ```
+   - Open [http://localhost:3000](http://localhost:3000) in your browser
+
+4. **Production Build**
+   ```powershell
+   pnpm build
+   pnpm start
+   ```
+
+### Environment Setup (Optional)
+
+Create a `.env.local` file in the root directory if you need to customize any environment variables:
+```env
+NEXT_PUBLIC_BASE_PATH=/KUKA-HMI-Dashboard
 ```
 
-2. Install dependencies:
-```bash
-pnpm install
+## Features Guide
+
+### 1. Camera Monitoring
+- Access via: `/camera` route
+- Features:
+  - Real-time camera feed monitoring
+  - Multiple camera view support
+  - Camera control interface
+
+### 2. Conveyor Control
+- Access via: `/conveyors` route
+- Features:
+  - Live conveyor status monitoring
+  - Speed control interface
+  - Emergency stop functionality
+
+### 3. Statistics Dashboard
+- Access via: `/statistics` route
+- Features:
+  - Real-time performance metrics
+  - Historical data visualization
+  - Custom reporting tools
+
+### 4. Process Flow
+- Access via: `/process-flow` route
+- Features:
+  - Visual process flow diagrams
+  - Real-time status updates
+  - Process control interface
+
+## Project Structure Explained
+
+```plaintext
+├── app/                    # Next.js 13+ app directory
+│   ├── camera/            # Camera monitoring feature
+│   ├── conveyors/         # Conveyor control system
+│   ├── statistics/        # Statistics and analytics
+│   └── process-flow/      # Process flow visualization
+├── components/            # Reusable UI components
+│   ├── ui/               # shadcn/ui components
+│   └── theme-provider.tsx # Theme configuration
+├── hooks/                 # Custom React hooks
+├── lib/                   # Utility functions
+├── public/               # Static assets
+└── styles/               # Global styles
 ```
 
-3. Start the development server:
-```bash
-pnpm dev
-```
+## Development Guide
 
-4. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Available Scripts
 
-## Project Structure
+- `pnpm dev` - Start development server
+- `pnpm build` - Create production build
+- `pnpm start` - Start production server
+- `pnpm lint` - Run ESLint for code quality
 
-- `/app` - Next.js app router pages and layouts
-- `/components` - Reusable UI components
-- `/hooks` - Custom React hooks
-- `/lib` - Utility functions and shared logic
-- `/public` - Static assets
-- `/styles` - Global styles and Tailwind configurations
+### Code Style
 
-## Features Overview
+This project uses:
+- TypeScript for type safety
+- ESLint for code quality
+- Prettier for code formatting
+- shadcn/ui for consistent UI components
 
-### Camera Monitoring
-- Real-time camera feed integration
-- Multiple camera view support
-- Camera control interface
+### Adding New Features
 
-### Conveyor Control
-- Conveyor status monitoring
-- Speed control
-- Emergency stop functionality
+1. Create new components in `components/`
+2. Add new pages in `app/`
+3. Update types as needed
+4. Test thoroughly before committing
 
-### Statistics
-- Real-time performance metrics
-- Historical data visualization
-- Custom reporting tools
+## Troubleshooting
 
-### Process Flow
-- Visual process flow diagrams
-- Real-time status updates
-- Process control interface
+### Common Issues
+
+1. **Port 3000 Already in Use**
+   ```powershell
+   netstat -ano | findstr :3000
+   taskkill /PID <PID> /F
+   ```
+
+2. **Dependencies Issues**
+   ```powershell
+   rm -r -force node_modules
+   rm pnpm-lock.yaml
+   pnpm install
+   ```
+
+3. **Build Errors**
+   - Clear Next.js cache:
+     ```powershell
+     rm -r -force .next
+     pnpm build
+     ```
 
 ## Contributing
 
 1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
+2. Create your feature branch:
+   ```powershell
+   git checkout -b feature/your-feature-name
+   ```
+3. Commit your changes:
+   ```powershell
+   git commit -m "Add: your feature description"
+   ```
+4. Push to the branch:
+   ```powershell
+   git push origin feature/your-feature-name
+   ```
 5. Open a Pull Request
 
 ## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
 
-## Acknowledgments
+## Support
 
-- [shadcn/ui](https://ui.shadcn.com/) for the beautiful UI components
-- [Next.js](https://nextjs.org/) team for the amazing framework
-- KUKA Robotics for inspiration
+For support, please open an issue in the GitHub repository.

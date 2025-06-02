@@ -7,20 +7,14 @@ const nextConfig = {
     ignoreBuildErrors: true,
   },
   images: {
-    unoptimized: true,
-  },
-  async rewrites() {
-    return [];
-  },
-  webpackDevMiddleware: config => {
-    config.watchOptions = {
-      poll: 1000,
-      aggregateTimeout: 300,
-    }
-    return config
+    domains: ['localhost'],
+    unoptimized: false,
   },
   experimental: {
     serverActions: true,
+  },
+  async rewrites() {
+    return [];
   }
 }
 

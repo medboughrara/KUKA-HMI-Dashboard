@@ -4,8 +4,11 @@ const nextConfig = {
   trailingSlash: true,
   images: {
     unoptimized: true,
+    remotePatterns: [],
+    domains: [],
   },
   basePath: '/KUKA-HMI-Dashboard',
+  assetPrefix: '/KUKA-HMI-Dashboard/',
   typescript: {
     ignoreBuildErrors: true,
   },

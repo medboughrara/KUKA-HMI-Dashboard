@@ -6,9 +6,11 @@ const nextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
+  output: 'export',
+  basePath: '/KUKA-HMI-Dashboard',
   images: {
     domains: ['localhost'],
-    unoptimized: false,
+    unoptimized: true,
   },
   experimental: {
     serverActions: true,

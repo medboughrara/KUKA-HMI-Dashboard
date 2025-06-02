@@ -2,6 +2,11 @@
 
 A modern web-based Human Machine Interface (HMI) dashboard built with Next.js, TypeScript, and Tailwind CSS for KUKA robotics systems.
 
+## Deployment
+
+This project is deployed and running as a dynamic Next.js application on Vercel. You can access the live version at:
+[KUKA HMI Dashboard](https://kuka-hmi-dashboard.vercel.app)
+
 ## Features
 
 - 📸 **Camera Monitoring**: Real-time camera feed monitoring

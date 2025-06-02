@@ -4,7 +4,7 @@ A modern web-based Human Machine Interface (HMI) dashboard built with Next.js, T
 
 ## Live Demo
 
-Visit the live demo at: https://medboughrara.github.io/KUKA-HMI-Dashboard/
+Visit the live demo at: still working on
 
 ## Detailed Installation Guide
 

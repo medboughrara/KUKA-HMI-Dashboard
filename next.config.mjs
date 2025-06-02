@@ -1,22 +1,15 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  eslint: {
-    ignoreDuringBuilds: true,
+  output: 'export',
+  basePath: '/KUKA-HMI-Dashboard',
+  images: {
+    unoptimized: true,
   },
   typescript: {
     ignoreBuildErrors: true,
   },
-  output: 'export',
-  basePath: '/KUKA-HMI-Dashboard',
-  images: {
-    domains: ['localhost'],
-    unoptimized: true,
-  },
-  experimental: {
-    serverActions: true,
-  },
-  async rewrites() {
-    return [];
+  eslint: {
+    ignoreDuringBuilds: true,
   }
 }
 

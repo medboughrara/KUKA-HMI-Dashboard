@@ -1,10 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export',
-  basePath: '/KUKA-HMI-Dashboard',
+  trailingSlash: true,
   images: {
     unoptimized: true,
   },
+  basePath: '/KUKA-HMI-Dashboard',
   typescript: {
     ignoreBuildErrors: true,
   },
